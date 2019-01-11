@@ -10,7 +10,7 @@ The folder structure is what first comes when you use create react app to create
 - [eslint](https://www.npmjs.com/package/eslint-config-airbnb) (based from AirBnB and extended with prettier - a **.eslintrc** is present for rule extension)
 - [lint-staged](https://www.npmjs.com/package/lint-staged) (to run prettier and eslint - tests should also be included)
 - [commitlint](https://github.com/marionebl/commitlint) (to assure conventional commits are performed)
-- bash script to prevent commits in develop and master branches
+- bash script to prevent commits in **develop** and **master** branches
 - docker configuration to run the app in **dev** and in **prod**
 
 ## Implications
@@ -33,5 +33,7 @@ NOTE: the **.env** file has a variable that defines if the script that docker ru
 
 ```APP_ENV=development``` to create a docker with a dev environment
 ```APP_ENV=production``` to create a docker with a prod environment
+
+Your project is now running in [localhost:3000](http://localhost:3000)
 
 That is all, start developing!
