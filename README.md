@@ -1,68 +1,29 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Bootstrap React App
 
-## Available Scripts
+This project is a starter for a [Create React App](https://github.com/facebook/create-react-app) that has a few configured tools for development.<br>
+The folder structure is what first comes when you use create react app to create a new project. It hasn't been altered.
 
-In the project directory, you can run:
+## Included Tools
 
-### `npm start`
+- [husky](https://www.npmjs.com/package/husky) (for git hooks setup)
+- [prettier](https://github.com/prettier/prettier) and [prettier-eslint](https://github.com/prettier/prettier-eslint) (for code style even in IDE - a **.prettierrc** is present for rule extension)
+- [eslint](https://www.npmjs.com/package/eslint-config-airbnb) (based from AirBnB and extended with prettier - a **.eslintrc** is present for rule extension)
+- [lint-staged](https://www.npmjs.com/package/lint-staged) (to run prettier and eslint - tests should also be included)
+- [commitlint](https://github.com/marionebl/commitlint) (to assure conventional commits are performed)
+- bash script to prevent commits in develop and master branches
+- docker configuration to run the app in **dev** and in **prod**
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Docker usage
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Before starting development, you have to build the images, so run:<br>
+```docker-compose build```
 
-### `npm test`
+Once the image is build, just run:<br>
+```docker-compose up -d``` (-d is to run in detached mode)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+NOTE: the **.env** file has a variable that defines if the script that docker runs creates a dev or prod version.
 
-### `npm run build`
+```APP_ENV=development``` to create a docker with a dev environment
+```APP_ENV=production``` to create a docker with a prod environment
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+That is all, start developing!
