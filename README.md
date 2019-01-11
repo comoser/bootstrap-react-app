@@ -13,6 +13,14 @@ The folder structure is what first comes when you use create react app to create
 - bash script to prevent commits in develop and master branches
 - docker configuration to run the app in **dev** and in **prod**
 
+## Implications
+
+- In your IDE you'll have the **realtime eslint** info if you configured it.<br>
+- Before each commit (if you are not in develop or master branches), prettier and eslint will come into play and format your code the way it should according to the linter. If linter finds errors, they will be reported and you'll have to fix them<br>
+- After this, the commit message will be verified against a [conventional commit format](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) and if is not well formatted, a warning will appear
+
+Should all conditions above be cleared, the commit proceeds.
+
 ## Docker usage
 
 Before starting development, you have to build the images, so run:<br>
